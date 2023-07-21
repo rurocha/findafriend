@@ -1,10 +1,10 @@
-import { useState } from "react"
-import Image from "next/image"
-import logo from '@assets/logo.svg'
-import pets from '@assets/pets.svg'
+import { useState } from 'react'
+
+import Logo from '@assets/logo.svg'
+import Pets from '@assets/pets.svg'
 import * as S from '@styles/pages/home'
-import Select from "@components/Select"
-import { GetStaticProps } from "next"
+import Select from '@components/Select'
+import { GetStaticProps } from 'next'
 
 interface UFs {
   value: string
@@ -20,64 +20,65 @@ interface Props {
 }
 
 export default function Home({ ufs, states }: Props) {
-  const [uf, setUf] = useState('')
-  const [state, setState] = useState('')
+	const [uf, setUf] = useState('')
+	const [state, setState] = useState('')
 
-  function handleSelectUF(value: string) {
-    setUf(value)
-  }
-  function handleSelectState(value: string) {
-    setState(value)
-  }
+	function handleSelectUF(value: string) {
+		setUf(value)
+	}
+	function handleSelectState(value: string) {
+		setState(value)
+	}
 
-  return (
-    <S.Page>
-      <S.Container>
-        <S.LogoContainer>
-          <Image src={logo} alt="logo" />
-          <span>FindAFriend</span>
-        </S.LogoContainer>
+	return (
+		<S.Page>
+			<S.Container>
+				<S.LogoContainer>
+					<Logo />
+					<span>FindAFriend</span>
+				</S.LogoContainer>
         
-        <S.ContentHeading>
-          <S.Heading>Leve a felicidade para o seu lar</S.Heading>
-          <Image src={pets} alt="logo" />
-        </S.ContentHeading>
-        <S.Footer>
-          <S.Subtitle> Encontre o animal de estimação ideal para seu estilo de vida! </S.Subtitle>
-          <S.SearchContainer>
-            <span>Busque um amigo:</span>
-            <S.UfSelectContainer>
-              <Select 
-                options={ufs}
-                onSelect={handleSelectUF}
-                outlined
-              />
-            </S.UfSelectContainer>
-            <S.StateSelectContainer>
-              <Select 
-                options={states}
-                onSelect={handleSelectState}
-              />
-            </S.StateSelectContainer>
-          </S.SearchContainer>
-        </S.Footer>
-      </S.Container>
-    </S.Page>
-  )
+				<S.ContentHeading>
+					<S.Heading>Leve a felicidade para o seu lar</S.Heading>
+					{/* <Image src={pets} alt="logo" /> */}
+					<Pets />
+				</S.ContentHeading>
+				<S.Footer>
+					<S.Subtitle> Encontre o animal de estimação ideal para seu estilo de vida! </S.Subtitle>
+					<S.SearchContainer>
+						<span>Busque um amigo:</span>
+						<S.UfSelectContainer>
+							<Select 
+								options={ufs}
+								onSelect={handleSelectUF}
+								outlined
+							/>
+						</S.UfSelectContainer>
+						<S.StateSelectContainer>
+							<Select 
+								options={states}
+								onSelect={handleSelectState}
+							/>
+						</S.StateSelectContainer>
+					</S.SearchContainer>
+				</S.Footer>
+			</S.Container>
+		</S.Page>
+	)
 }
 
 export const getStaticProps: GetStaticProps = () => {
 
-  return {
-    props: {
-      ufs: [
-        { value: 'SP', label: 'SP'},
-        { value: 'RJ', label: 'RJ'}
-      ],
-      states: [
-        { label: 'São Paulo', value: 'SP'},
-        { label: 'Rio de Janeiro', value: 'RJ'}
-      ]
-    }
-  }
+	return {
+		props: {
+			ufs: [
+				{ value: 'SP', label: 'SP'},
+				{ value: 'RJ', label: 'RJ'}
+			],
+			states: [
+				{ label: 'São Paulo', value: 'SP'},
+				{ label: 'Rio de Janeiro', value: 'RJ'}
+			]
+		}
+	}
 }
