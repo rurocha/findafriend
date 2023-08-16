@@ -62,13 +62,23 @@ export const RequirementsTitle = styled('h6', {
 })
 
 export const ContainerRequirements = styled('div', {
-	paddingInline: 40,
 	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
+	flexDirection: 'column',
+	gap: 10,
+	paddingBottom: 50,
+	borderBottom: '1px solid $gray200',
+	marginBottom: 50,
 })
 
 export const RequirementsCard = styled('div', {
-
+	padding: '15px 40px',
+	background: 'linear-gradient(134deg, rgba(247, 95, 96, 0.10) 0%, rgba(241, 81, 86, 0.00) 100%)',
+	gap: 14,
+	display: 'flex',
+	alignItems: 'center',
+	borderRadius: 10,
+	border: '1px solid $red100',
+	color: '$red100',
+	fontWeight: 600,
 })
 

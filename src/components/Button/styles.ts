@@ -8,16 +8,25 @@ export const Button = styled('button', {
 	cursor: 'pointer',
 	fontSize: 18,
 	color: '$blue100',
+	fontWeight: 700,
 
 	variants: {
 		theme: {
 			gray: {
 				backgroundColor: '$gray100',
-				fontWeight: 700,
 				borderRadius: 10,
+			},
+			green: {
+				borderRadius: 20,
+				backgroundColor: '$green100',
+				color: '$white',
+			},
+			blue: {
+				backgroundColor: '$blue100',
+				color: '$white',
 			}
 		},
-		
+
 		fullWidth: {
 			true: {
 				width: '100%'
@@ -37,6 +46,7 @@ export const Button = styled('button', {
 			true: {
 				display: 'flex',
 				alignItems:'center',
+				justifyContent: 'center',
 				gap: 8,
 			}
 		}

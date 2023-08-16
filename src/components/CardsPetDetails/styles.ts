@@ -4,6 +4,8 @@ export const Cards = styled('div', {
 	display: 'flex',
 	justifyContent: 'space-between',
 	gap: 14,
+	overflow: 'auto',
+	paddingBottom: 10
 })
 
 export const Card = styled('div', {

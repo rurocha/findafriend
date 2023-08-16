@@ -13,6 +13,9 @@ export const Card = styled('article', {
 		'span': {
 			color: '$white'
 		}
+	},
+	'& img': {
+		width: '100%'
 	}
 })
 

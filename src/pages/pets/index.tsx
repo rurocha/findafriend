@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import * as S from '../../styles/pages/pets'
-import logo from '@assets/logo.svg'
-import searchIcon from '@assets/icons/search.svg'
+import Logo from '@assets/logo.svg'
+import SearchIcon from '@assets/icons/search.svg'
 import { GetStaticProps } from 'next'
 import Select from '@components/Select'
 import { useState } from 'react'
@@ -66,7 +66,7 @@ export default function Pet({ ufs, states, items }: Props) {
 		<S.Container>
 			<S.Aside>
 				<S.AsideHeader>
-					<Image src={logo} alt="logo"/>
+					<Logo />
 					<S.SearchContainer>
 						<S.UfSelectContainer>
 							<Select
@@ -87,7 +87,7 @@ export default function Pet({ ufs, states, items }: Props) {
 								backgroundColor: '$yellow'
 							}}
 						>
-							<Image src={searchIcon} alt="search icon" />
+							<SearchIcon />
 						</Button>
 					</S.SearchContainer>
 				</S.AsideHeader>

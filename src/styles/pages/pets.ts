@@ -1,9 +1,11 @@
 import { styled } from '..'
 
 export const Container = styled('div', {
-	display: 'grid',
-	gridTemplateColumns: '392px 1fr',
-	height: '100vh'
+	'@aboveDesktop': {
+		display: 'grid',
+		gridTemplateColumns: '392px 1fr',
+		height: '100vh'
+	}
 })
 
 export const Aside = styled('aside', {
@@ -53,9 +55,13 @@ export const SelectContainer = styled('div', {
 })
 
 export const ContainerCards = styled('div', {
-	display: 'flex',
-	gap: 24,
-	flexWrap: 'wrap'
+	display: 'grid',
+	gridTemplateColumns: '1fr 1fr',
+	gap: 16,
+	'@aboveTablet': {
+		gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 280px))',
+		gap: 32,
+	}
 })
 
 export const AsideBodyTitle = styled('h6', {

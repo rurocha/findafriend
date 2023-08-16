@@ -17,7 +17,8 @@ import EllipseIcon from '@assets/icons/ellipse.svg'
 import MaximizeIcon from '@assets/icons/maximize.svg'
 import avatar from '@assets/img/avatar.png'
 import WhatsAppIcon from '@assets/icons/whatsapp.svg'
-import alert from '@assets/icons/alert.svg'
+import WhatsAppStrokeIcon from '@assets/icons/whatsapp-stroked.svg'
+import Alert from '@assets/icons/alert.svg'
 
 
 const imgs = [
@@ -29,6 +30,13 @@ const imgs = [
 		src: photo2,
 		alt: 'asadasds',
 	}
+]
+
+const cards = [
+	'Local grande para o animal correr e brincar.',
+	'Proibido apartamento',
+	'Ambiente frio, pois possui muito pelo.',
+	'Cão com intolerância a lactose.'
 ]
 
 interface Props {
@@ -82,10 +90,23 @@ export default function PetId({ data }: Props) {
 
 					<S.ContainerRequirements>
 						<S.RequirementsTitle>Requisitos para adoção</S.RequirementsTitle>
-						<S.RequirementsCard> 
-							<Image src={alert} alt="icone de alerta" />
-						</S.RequirementsCard>
+						{
+							cards.map((text, i) => (
+								<S.RequirementsCard key={i}> 
+									<Alert />
+									<span>{ text }</span>
+								</S.RequirementsCard>
+							))
+						}
 					</S.ContainerRequirements>
+
+					<Button 
+						theme="green" 
+						fullWidth 
+						iconComponent={WhatsAppStrokeIcon}
+					>
+						Entrar em contato
+					</Button>
 				</S.Content>
 			</S.Container>
 		</S.Background>

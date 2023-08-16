@@ -40,8 +40,7 @@ export default function Home({ ufs, states }: Props) {
         
 				<S.ContentHeading>
 					<S.Heading>Leve a felicidade para o seu lar</S.Heading>
-					{/* <Image src={pets} alt="logo" /> */}
-					<Pets />
+					<Pets viewBox="0 0 592 305" />
 				</S.ContentHeading>
 				<S.Footer>
 					<S.Subtitle> Encontre o animal de estimação ideal para seu estilo de vida! </S.Subtitle>

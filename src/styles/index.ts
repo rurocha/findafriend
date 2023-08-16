@@ -30,6 +30,9 @@ export const {
 			beige100: '#FDECED',
 			beige200: '#FBE1E2',
 			gray100: '#E7EBF0',
+			gray200: '#D3E2E5',
+			gray300: '#F5F8FA',
+			green100: '#3CDC8C',
 		}
 	},
 
@@ -37,13 +40,15 @@ export const {
 		aboveMobile: `(min-width: ${breakingPoints.xs}px)`,
 		aboveTablet: `(min-width: ${breakingPoints.sm}px)`,
 		aboveDesktop: `(min-width: ${breakingPoints.lg}px)`,
-		aboveDesktopXl: `(min-width: ${breakingPoints.lg}px)`,
+		aboveDesktopXl: `(min-width: ${breakingPoints.xl}px)`,
+
+
+		belowMobile: `(max-width: ${breakingPoints.xs}px)`,
+		belowTablet: `(max-width: ${breakingPoints.sm}px)`,
+		belowDesktop: `(max-width: ${breakingPoints.lg}px)`,
+		belowDesktopXl: `(max-width: ${breakingPoints.xl}px)`,
 	},
 
 	utils: {
-		_flex: (justify: Stitches.PropertyValue<'justifyContent'>) => ({
-			display: 'flex',
-			justifyContent: justify
-		}),
 	}
 })

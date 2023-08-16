@@ -10,13 +10,16 @@ export const globalStyles = globalCss({
 		fontFamily: 'Nunito',
 		color: '$blue100'
 	},
-	'select, input, textarea': {
+	'select, input, textarea, button': {
 		fontFamily: 'Nunito',
 		fontWeight: 400,
 	},
-	img: {
+	'img, svg': {
 		maxWidth: '100%',
 		height: 'auto'
+	},
+	svg: {
+		overflow: 'visible'
 	},
 	a: {
 		textDecoration: 'none'
