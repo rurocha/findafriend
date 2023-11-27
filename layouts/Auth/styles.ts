@@ -1,4 +1,4 @@
-import { styled } from '..'
+import { styled } from '@styles/index'
 
 export const Container = styled('div', {
 	maxWidth: 1112,
@@ -13,20 +13,4 @@ export const Container = styled('div', {
 		height: '100vh',
 		alignItems: 'center'
 	}
-})
-
-
-export const Content = styled('div', {
-
-})
-
-export const Form = styled('form', {
-	display: 'flex',
-	flexDirection: 'column',
-	gap: 16,
-})
-
-export const Title = styled('h2', {
-	fontSize: 54,
-	marginBottom: 102,
 })

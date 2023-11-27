@@ -20,18 +20,6 @@ import WhatsAppIcon from '@assets/icons/whatsapp.svg'
 import WhatsAppStrokeIcon from '@assets/icons/whatsapp-stroked.svg'
 import Alert from '@assets/icons/alert.svg'
 
-
-const imgs = [
-	{
-		src: photo,
-		alt: 'lalalal',
-	},
-	{
-		src: photo2,
-		alt: 'asadasds',
-	}
-]
-
 const cards = [
 	'Local grande para o animal correr e brincar.',
 	'Proibido apartamento',
@@ -58,12 +46,12 @@ export default function PetId({ data }: Props) {
 		<S.Background>
 			<S.Container>
 				<Slider
-					imgs={imgs}
+					imgs={data.photos}
 					css={{ marginBottom: 70}}
 				/>
 				<S.Content>
-					<S.Title>{ data.data.attributes.name }</S.Title>
-					<S.Description>{ data.data.attributes.description }</S.Description>
+					<S.Title>{ data.name }</S.Title>
+					<S.Description>{ data.about }</S.Description>
 					<CardsPetDetails
 						cards={[
 							{ label: 'Muita energia', icon: EnergyIcon },
@@ -115,7 +103,7 @@ export default function PetId({ data }: Props) {
 
 export async function getStaticPaths() {
 	const data = await getPets()
-	const paths = data.data.map(({ id }) => ({
+	const paths = data.map(({ id }) => ({
 		params: { id: String(id) }
 	}))
 

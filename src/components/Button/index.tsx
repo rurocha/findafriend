@@ -1,6 +1,8 @@
+import { ButtonHTMLAttributes } from 'react'
 import * as S from './styles'
 import type * as Stitches from '@stitches/react'
-interface Props {
+
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode
   css?: Stitches.CSS
 	theme?: 'gray' | 'green' | 'blue'
@@ -9,7 +11,7 @@ interface Props {
 	fullWidth?: boolean
 }
 
-export default function Button ({ children, css, theme, size, iconComponent: Icon, fullWidth }: Props) {
+export default function Button ({ children, css, theme, size, iconComponent: Icon, fullWidth, ...rest }: Props) {
 	return (
 		<S.Button 
 			css={css} 
@@ -17,6 +19,7 @@ export default function Button ({ children, css, theme, size, iconComponent: Ico
 			size={size}
 			hasIcon={!!Icon}
 			fullWidth={fullWidth}
+			{...rest}
 		>
 			{ Icon && <Icon /> }
 			{children}

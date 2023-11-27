@@ -23,5 +23,8 @@ export const globalStyles = globalCss({
 	},
 	a: {
 		textDecoration: 'none'
+	},
+	fieldset: {
+		border: 'none'
 	}
 })

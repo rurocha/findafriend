@@ -5,7 +5,7 @@ import type * as Stitches from '@stitches/react'
 
 interface Image {
   src: string | StaticImageData
-  alt: string
+  alt?: string
   id?: number
 }
 interface Props {

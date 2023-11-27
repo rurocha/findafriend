@@ -115,7 +115,9 @@ export default function Pet({ ufs, states, items }: Props) {
       
 			<S.Content>
 				<S.ContentHeader>
-					<span>Encontre 324 amigos na sua cidade</span>
+					<span>
+						Encontre <strong>{items.length}</strong> amigos na sua cidade
+					</span>
 					<S.SelectContainer>
 						<Select 
 							options={states}
@@ -158,10 +160,10 @@ export default function Pet({ ufs, states, items }: Props) {
 export const getStaticProps: GetStaticProps = async () => {
 	const data = await getPets()
   
-	const items = data.data.map(({ attributes, id }) => ({
-		label: attributes.name,
-		src: attributes.cover.data.attributes.url,
-		alt: attributes.name,
+	const items = data.map(({ name, id}) => ({
+		label: name,
+		src: 'https://res.cloudinary.com/rrocha/image/upload/v1688397590/thumbnail_Rectangle_29_27eb0288bc.png',
+		alt: name,
 		id
 	}))
 

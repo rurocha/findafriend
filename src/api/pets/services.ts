@@ -1,20 +1,23 @@
 import { api } from '..'
-import { Pets, Pet } from './types'
+import { Pet } from './types'
 
 
-export const getPets = async (): Promise<Pets> => {
+export const getPets = async (userId?: string | number): Promise<Pet[]> => {
 	const configs = {
-		url: '/pets?populate=*',
-		method: 'GET'
+		url: 'http://localhost:4000/pets',
+		method: 'GET',
+		params: {
+			...userId && {user_id: userId}
+		}
 	}
-
 	const res = await api(configs)
+
 	return res.data
 }
 
 export const getPet = async (id: string | number): Promise<Pet> => {
 	const configs = {
-		url: `/pets/${id}?populate=*`,
+		url: `http://localhost:4000/pets/${id}`,
 		method: 'GET'
 	}
 
